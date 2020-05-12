@@ -24,7 +24,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="labelStatus">
     <property name="geometry">
      <rect>
       <x>430</x>
@@ -53,7 +53,10 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnFind">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -66,7 +69,10 @@
      <string>Find</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btnDelete">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -79,7 +85,7 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="lineEditInput">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -89,7 +95,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="labelTextInput">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -102,7 +108,7 @@
      <string>Text</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="labelColumn">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -115,7 +121,10 @@
      <string>Column</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btnAdd">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -138,8 +147,18 @@
      <height>32</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuOpen_database">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionOpenDatabase"/>
+    <addaction name="actionOpenTable"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuOpen_database"/>
   </widget>
-  <action name="actionOpen_database">
+  <action name="actionOpenDatabase">
    <property name="checkable">
     <bool>false</bool>
    </property>
@@ -147,12 +166,15 @@
     <string>Open database</string>
    </property>
   </action>
-  <action name="actionQuit">
+  <action name="actionOpenTable">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Open table</string>
    </property>
   </action>
-  <action name="actionQuit_2">
+  <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
    </property>

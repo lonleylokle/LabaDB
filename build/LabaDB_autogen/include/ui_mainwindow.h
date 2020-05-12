@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
@@ -41,6 +42,7 @@ public:
     QLabel *label_3;
     QPushButton *pushButton_3;
     QMenuBar *menubar;
+    QMenu *menuOpen_database;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -89,7 +91,15 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 32));
+        menuOpen_database = new QMenu(menubar);
+        menuOpen_database->setObjectName(QString::fromUtf8("menuOpen_database"));
         MainWindow->setMenuBar(menubar);
+
+        menubar->addAction(menuOpen_database->menuAction());
+        menuOpen_database->addSeparator();
+        menuOpen_database->addAction(actionOpen_database);
+        menuOpen_database->addAction(actionQuit);
+        menuOpen_database->addAction(actionQuit_2);
 
         retranslateUi(MainWindow);
 
@@ -108,6 +118,7 @@ public:
         label_2->setText(QCoreApplication::translate("MainWindow", "Text", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Column", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
+        menuOpen_database->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
 };

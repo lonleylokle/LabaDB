@@ -5,6 +5,13 @@
 #include <QtSql>
 #include <QtDebug>
 #include <QFileInfo>
+#include <QSqlQuery>
+#include <QSqlTableModel>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDir>
+#include <QInputDialog>
+#include <QSqlDatabase>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,17 +26,19 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_3_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_clicked();
-    void on_actionQuit_2_triggered();
+    void on_btnAdd_clicked();
+    void on_btnFind_clicked();
+    void on_btnDelete_clicked();
+    void on_actionOpenDatabase_triggered();
+    void on_actionOpenTable_triggered();
     void on_actionQuit_triggered();
-    void on_actionOpen_database_triggered();
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mydb;
     QSqlTableModel *model;
+    void openDatabase(QString file_name);
+    void openTable();
 };
 #endif // MAINWINDOW_H
  
