@@ -78,10 +78,17 @@ void MainWindow::on_btnFind_clicked() {
 }
 
 void MainWindow::on_btnAdd_clicked() {
-
+    qDebug() << "inserting row" << model->insertRow(model->rowCount());
 }
 
 void MainWindow::on_btnDelete_clicked() {
-    
+    int selectedRow = ui->tableView->currentIndex().row();
+    if (selectedRow >= 0) {
+        QMessageBox::StandardButton btn = QMessageBox::question(this, "Delete", "Do you want to delete this entry?");
+        if (btn == QMessageBox::Yes)
+            qDebug() << "deleting row:" << model->removeRow(selectedRow);
+    }else {
+        qDebug() << "no row selected";
+    }
 }
  
