@@ -7,6 +7,10 @@
 
 `git clone https://github.com/lonleylokle/LabaDB.git`
 
+`cd LabaDB`
+
+`mkdir build`
+
 `cmake -S ./ -B ./build`
 
 `cmake --build ./build`
